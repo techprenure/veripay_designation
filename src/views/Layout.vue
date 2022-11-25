@@ -57,8 +57,8 @@
                     </template>
 
                     <v-list-item v-for="(title, i) in [
-                 { name: 'Assign Allowance Name', link: '/manage-allowance'},
-                   { name: 'Manage Allowance Name', link: '/manage-allowance-name' },
+                 { name: 'Assign Allowance Name', link: '/dashboard/setup/hr/manage-allowance/name'},
+                   { name: 'Manage Allowance Name', link: '/dashboard/setup/hr/manage-allowance' },
                  { name: 'Non Taxable Allowance', link: '/nonTaxableAllowance'},
                  { name: 'Unit Allowance', link: '/unit-allowance'},   
                   { name: 'Add Exclusion', link: '/add-exclusion'},  
@@ -104,7 +104,7 @@
                     </v-list-item-content>
                 </v-list-item>
 
-                <v-list-item to="/designation" link style="color: #fff" class="text-center">
+                <v-list-item to="/dashboard/designation" link style="color: #fff" class="text-center">
                     <v-list-item-content>
                         <v-list-item-title style="text-align: left; padding-left: 4rem">
                             Designation

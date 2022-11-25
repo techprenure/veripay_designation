@@ -68,9 +68,7 @@
                 </template>
               </v-data-table>
             </v-card>
-            <!-- <div class="my-16">
-              <h4 class="no-data">No available allowance name</h4>
-            </div> -->
+                 
             <div
               v-if="items.length === 0"
               class="my-16"
@@ -209,6 +207,8 @@ export default {
   data() {
     return {
       dialogEdit: false,
+      allowance_name:"",
+      salary_regime:"",
       allowance_edit: "",
       allowance: "",
       tabledata: false,
@@ -285,6 +285,7 @@ export default {
         const res = await axios({
           headers: {
             Authorization: `Bearer ${this.jwt}`,
+              'Access-Control-Allow-Origin':'*',
           },
           method: "put",
           url: `${this.baseURL}/allowance`,
@@ -294,6 +295,7 @@ export default {
             allowance_code: this.allowanceItem.allow_code,
           },
         });
+        console.log(res);
         if (res.data.response.code == "00") {
           const row = this.items.findIndex(
             (el) => el.allow_code === this.allowanceItem.instu_code
@@ -348,6 +350,7 @@ export default {
         const res = await axios({
           headers: {
             Authorization: `Bearer ${this.jwt}`,
+              'Access-Control-Allow-Origin':'*',
           },
           // - {‘institution_code’:’’, ‘allowance_code’:’’}
           method: "delete",
@@ -388,12 +391,13 @@ export default {
       }
     },
 
-    //Populate Table
+    //Populate Table for allowance list
     async AllowanceData() {
       try {
         const res = await axios({
           headers: {
             Authorization: `Bearer ${this.jwt}`,
+              'Access-Control-Allow-Origin':'*',
           },
           method: "GET",
           url: `${this.baseURL}/allowance?institution_code=${this.instu_code}`,
@@ -441,6 +445,7 @@ export default {
           const res = await axios({
             headers: {
               Authorization: `Bearer ${this.jwt}`,
+                'Access-Control-Allow-Origin':'*',
             },
             method: "post",
             url: `${this.baseURL}/allowance`,
@@ -449,9 +454,7 @@ export default {
               allowance_name: this.allowance,
               entered_by: "Veripay Integrated",
             },
-          });
-
-          // console.log("ALLOWANCE RESPONSE", res);
+          });     
 
           //check for success
           if (res.data.response.code == "00") {
@@ -511,6 +514,7 @@ export default {
         const res = await axios({
           headers: {
             Authorization: `Bearer ${this.jwt}`,
+              'Access-Control-Allow-Origin':'*',
           },
           method: "patch",
           url: `${this.baseURL}/allowance`,

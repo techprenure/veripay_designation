@@ -120,6 +120,7 @@ export default {
         return {
             ministryEdit: '',
             dialogDelete:false,
+            ministryNd:"",
             ministry: "",
             dialogMinistryedit:false,
             dialogMinistry: false,

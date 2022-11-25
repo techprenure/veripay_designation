@@ -32,17 +32,17 @@ const routes = [
     component: Layout,
     children: [
       {
-        path: "/designation",
+        path: "/dashboard/setup/hr/designation",
         name: "Desgination",
         component: Desgination,
       },
       {
-        path: "/manage-qulification",
+        path: "/dashboard/setup/hr/manage-qualifications",
         name: "manageQulification",
         component: manageQulification,
       },
       {
-        path: "/manage-allowance",
+        path: "/dashboard/setup/hr/manage-allowance",
         name: "ManageAllowance",
         component: ManageAllowance,
       },
@@ -56,14 +56,14 @@ const routes = [
         name: "nonTaxableAllowance",
         component:nonTaxableAllowance,
       },
-      
+
       {
         path: "/employee-enrollment",
         name: "EmployeeEnrollment",
         component: EmployeeEnrollment,
       },
       {
-        path: "/manage-allowance-name",
+        path: "/dashboard/setup/hr/manage-allowance/name",
         name: "ManageAllowanceName",
         component: ManageAllowanceName,
       },
@@ -83,7 +83,7 @@ const routes = [
         component: unitDeduction,
       },
       {
-        path: "/manageDeduction",
+        path: "/dashboard/setup/hr/deductions/name",
         name: "ManageDeduction",
         component: manageDeduction,
       },
@@ -108,12 +108,12 @@ const routes = [
         component: deductionExclusion,
       },
       {
-        path: "/mda-branch",
+        path: "/dashboard/setup/hr/mda",
         name: "MDA",
         component: MDA_Branch,
       },
       {
-        path: "/mda-department",
+        path: "/dashboard/setup/hr/mda/department",
         name: "MDA",
         component: MDA_Department,
       },
@@ -123,7 +123,7 @@ const routes = [
       //   component: Add_Designation,
       // },
       {
-        path: "/deduction",
+        path: "/dashboard/setup/hr/deductions",
         name: "deduction",
         component: deduction,
       },

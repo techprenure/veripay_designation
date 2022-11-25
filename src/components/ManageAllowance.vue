@@ -288,6 +288,7 @@ export default {
           text: "Empty Field!",
           width: 400,
         });
+       
         this.dialog = true;
       } else {
         try {
@@ -295,7 +296,7 @@ export default {
           const res = await axios({
             headers: {
               Authorization: `Bearer ${this.jwt}`,
-            },
+                 },
             method: "post",
             url: `${this.baseURL}/allowance`,
             data: {
@@ -374,7 +375,7 @@ export default {
         const res = await axios({
           headers: {
             Authorization: `Bearer ${this.jwt}`,
-          },
+             },
           method: "patch",
           url:`${this.baseURL}/allowance_regime`,
 
@@ -431,7 +432,7 @@ export default {
         const res = await axios({
           headers: {
             Authorization: `Bearer ${this.jwt}`,
-          },
+             },
           method: "GET",
           url: `${this.baseURL}/allowance_regime?institution_code=${this.instu_code}`,
         });
@@ -464,7 +465,7 @@ export default {
         const res = await axios({
           headers: {
             Authorization: `Bearer ${this.jwt}`,
-          },
+             },
           method: "GET",
           url: `${this.baseURL}/allowance?institution_code=${this.instu_code}`,
         });
@@ -499,7 +500,7 @@ export default {
           const res = await axios({
             headers: {
               Authorization: `Bearer ${this.jwt}`,
-            },
+                 },
             method: "post",
             url: `${this.baseURL}/allowance_regime`,
             data: {
@@ -577,7 +578,7 @@ export default {
         const res = await axios({
           headers: {
             Authorization: `Bearer ${this.jwt}`,
-          },
+             },
           method: "put",
           url: `${this.baseURL}/allowance_regime`,
 
@@ -646,7 +647,7 @@ export default {
         const res = await axios({
           headers: {
             Authorization: `Bearer ${this.jwt}`,
-          },
+             },
           // - {‘institution_code’:’’, ‘allowance_code’:’’}
           method: "delete",
           url: `${this.baseURL}/allowance_regime`,

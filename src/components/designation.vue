@@ -111,6 +111,7 @@ export default {
         return {
             designation: "",
             dialogDelete:false,
+            filter:"",
             desigN:'',
             DesignationEd: "",
             dialogEdit: false,

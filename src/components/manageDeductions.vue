@@ -133,6 +133,7 @@ export default {
         deductionName:'',
         dialog: false,
         deleteName:'',
+        regime:"",
         regimeEd:'',
         deductionEd:'',
         deduction: '',
@@ -140,7 +141,7 @@ export default {
         dialogTwo: false,
         dialogEdit: false,
         deduction:'',
-        regime:'',
+      
         dialogDelete: false,
         program: '',
         headers: [{
