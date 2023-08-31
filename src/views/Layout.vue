@@ -58,7 +58,7 @@
 
                     <v-list-item v-for="(title, i) in [
                  { name: 'Assign Allowance Name', link: '/dashboard/setup/hr/manage-allowance/name'},
-                   { name: 'Manage Allowance Name', link: '/dashboard/setup/hr/manage-allowance' },
+                   { name: 'Manage Allowance Name', link: '/dashboard/setup/hr/manage-allowance ' },
                  { name: 'Non Taxable Allowance', link: '/nonTaxableAllowance'},
                  { name: 'Unit Allowance', link: '/unit-allowance'},   
                   { name: 'Add Exclusion', link: '/add-exclusion'},  
@@ -72,29 +72,7 @@
                     </v-list-item>
                 </v-list-group>
 
-                <!-- <v-list-item to="/manage-allowance" link style="color: #fff" class="text-center">
-                    <v-list-item-content>
-                        <v-list-item-title style="text-align: left; padding-left: 4rem">
-                            Manage Allowance
-                        </v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
-
-                <v-list-item to="/allowance" link style="color: #fff" class="text-center">
-                    <v-list-item-content>
-                        <v-list-item-title style="text-align: left; padding-left: 4rem">
-                            Allowance
-                        </v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
-
-                <v-list-item to="/manage-allowance-name" link style="color: #fff" class="text-center">
-                    <v-list-item-content>
-                        <v-list-item-title style="text-align: left; padding-left: 4rem">
-                            Manage Allowance Name
-                        </v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item> -->
+           
 
                 <v-list-item to="/manage-qulification" link style="color: #fff" class="text-center">
                     <v-list-item-content>
@@ -191,21 +169,7 @@
 export default {
     data: () => ({
         drawer: null,
-        // items: [
-        //   {
-        //     title: "Menu",
-        //     icon: "mdi-format-list-checks",
-        //     to: "/",
-        //   },
-
-        //   { title: "Setup", icon: "mdi-bank", to: "" },
-        //   { title: "Menu Box", icon: "mdi-clipboard-text", to: "" },
-        //   { title: "Create Sub Admin", icon: "mdi-shield-account", to: "" },
-        //   { title: "Manage Allownace", icon: "mdi-lock", to: "/manage-allowance" },
-        //   { title: "Designation", icon: "mdi-lock", to: "/designation" },
-        //   { title: "MDA/Branch", icon: "mdi-lock", to: "/mda-branch" },
-        //   { title: "Deductions", icon: "mdi-lock", to: "/deductions" },
-        // ],
+      
     }),
 };
 </script>

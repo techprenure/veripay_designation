@@ -7,12 +7,12 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   
         state: {
-          //jwt:'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY2OTE4MTEyNywianRpIjoiZDQzYzJmZjgtMjhkOC00ZjI1LWIxY2UtZjdiOWEyY2EzMDUzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJlbWFpbCI6Im9ueWVrYWNoaXNhbXVlbDE4QGdtYWlsLmNvbSIsImNvdW50cnlfY29kZSI6IisyMzQiLCJwaG9uZSI6IjA4MDY5NTIzNjM5IiwiYnVzaW5lc3NfbmFtZSI6IkFwcG1hcnQgSW50ZWdyYXRlZCIsImNvbXBhbnlfdXJsIjoiaHR0cDovL2FwcG1hcnRpbnRlZ3IudmVyaXBheS5uZyIsInZhbGlkYXRpb24iOjEsImluc3RpdHV0aW9uX2NvZGUiOiJLMTI1NCIsIm5hbWUiOiJBcHBtYXJ0IEludGVncmF0ZWQiLCJzZXR1cCI6MCwic2lnbnVwX3N0YWdlIjo0LCJhY3RpdmF0ZWQiOnRydWUsImFkbWluX2NvZGUiOiI5Mzk4MjMzMzIxMTEyMTIwMjIiLCJhZGRyZXNzIjoiR2F0ZSIsImNpdHkiOiJVbXVhaGlhIiwiY291bnRyeSI6Ik5pZ2VyaWEiLCJzdGF0ZSI6IkFiaWEiLCJ6aXBfY29kZSI6IjEyMzM0NSJ9LCJuYmYiOjE2NjkxODExMjcsImV4cCI6MTY2OTIyNDMyN30.2i4bk7B6Zo8mpdizFPTCvKkEZXswN_BHRZqAuq9lqkE',
-        jwt: localStorage.getItem('@veripay_token'),
+        jwt:'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY2OTcxMjMyOSwianRpIjoiMzAxNGNiOGItYjAwYS00NDVhLTk5Y2QtZDRhMjQ2N2ZiMzQ2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJlbWFpbCI6Imtlbm55c3VjY2Vzc2theUBnbWFpbC5jb20iLCJjb3VudHJ5X2NvZGUiOiIrMjM0IiwicGhvbmUiOiIwODEwNDc2MzgwOCIsImJ1c2luZXNzX25hbWUiOiJOb2R5IiwiY29tcGFueV91cmwiOiJodHRwOi8vbm9keS52ZXJpcGF5Lm5nIiwidmFsaWRhdGlvbiI6MSwiaW5zdGl0dXRpb25fY29kZSI6IlUwNTg4IiwibmFtZSI6Ik5vZHkiLCJzZXR1cCI6MCwic2lnbnVwX3N0YWdlIjo0LCJhY3RpdmF0ZWQiOnRydWUsImFkbWluX2NvZGUiOiI5NzkxMzc1MjExMTEyODIwMjIiLCJ2YWxpZGF0ZV90b2tlbiI6IjE4OGNjNCIsImFkZHJlc3MiOiJBZHJlc3MiLCJjaXR5IjoiSWtvcm9kdSIsImNvdW50cnkiOiJOaWdlcmlhIiwic3RhdGUiOiJMYWdvcyIsInppcF9jb2RlIjoiMjI5MjI5In0sIm5iZiI6MTY2OTcxMjMyOSwiZXhwIjoxNjY5NzU1NTI5fQ.WDqjW4VV6GblshmnwL7tY6KUFtLHpyIpwxqwyiB-yO8',
+      //jwt: localStorage.getItem('@veripay_token'),
 
-     institution_code: company.institution_code,
-  //  institution_code: "K1254",
-    baseURL: 'http://localhost:8080' 
+     //institution_code: company.institution_code,
+    institution_code: "K1254",
+    baseURL: 'http://143.198.235.199:2120' 
   },
   getters: {
     getJwt(state) {
@@ -33,4 +33,3 @@ export default new Vuex.Store({
   actions: {},
   modules: {},
 });
-also 

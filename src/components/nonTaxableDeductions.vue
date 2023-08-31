@@ -256,6 +256,7 @@ export default {
                             approved: el.approved,
 
                         });
+                        console.log("All Allowance", el);
                       this.salaryRegime = "", this.deductionName = ""
                         this.dialog2 = false;
                         return Swal.fire({
@@ -286,62 +287,7 @@ export default {
             }
         },
 
-        // Activate Dactivate Allowance
-        // async allowance_status(item) {
-        //   console.log(item);
-        //   try {
-        //     const res = await axios({
-        //       headers: {
-        //         Authorization: `Bearer ${this.jwt}`,
-        //       },
-        //       method: "patch",
-        //       url:`${this.baseURL}/allowance_regime`,
-
-        //       data: {
-        //         institution_code: this.instu_code,
-        //         allowance_regime_code: item.allow_regime_code,
-        //         active: !item.status,
-        //       },
-        //     });
-        //     console.log(res);
-        //     // console.log("STATUS", item.status, !item.status);
-        //     //Check status
-        //     if (res.data.response.code == "00") {
-        //       const row = this.items.findIndex(
-        //         (el) => el.allow_code === item.allow_code
-        //       );
-
-        //       this.items[row].status = !item.status;
-
-        //       Swal.fire({
-        //         icon: "success",
-        //         title: "Successful",
-        //         width: 400,
-        //       });
-        //     } else if (res.data.response.code == "E400") {
-        //       Swal.fire({
-        //         icon: "error",
-        //         title: "Allowance Name not Deactivated",
-        //         width: 400,
-        //       });
-        //     } else if (res.data.response.code == "E401") {
-        //       Swal.fire({
-        //         icon: "error",
-        //         title: "Allowance Name not Activated",
-        //         width: 400,
-        //       });
-        //     }
-        //     // console.log(res);
-        //   } catch (error) {
-        //     Swal.fire({
-        //       icon: "error",
-        //       title: "Error Encounted",
-        //       width: 400,
-        //     });
-        //     console.log(error);
-        //   }
-        // },
-
+       
         //Populate NON TAXABLE DEDUCTION
         async populateTaxableDeduction() {
             try {
@@ -352,9 +298,7 @@ export default {
                     },
                     method: "GET",
                     url: `${this.baseURL}/non_taxable_deduction?institution_code=${this.instu_code}`,
-                });
-
-                console.log("NON TAXABLE DEDUCTION", res);
+                });           
 
                 if (res.data.response.code == "00") {
                     res.data.response.message.data.forEach((el) => {
@@ -373,218 +317,6 @@ export default {
             }
         },
 
-        // Fetch Populate Allowance Name and Salary Regime Select Field
-
-        //     res.data.response.message.allowances.forEach((el) => {
-        //       this.Allowanceitems.push(el.allowance_name);
-        //     });
-        //   } catch (error) {
-        //     console.log(error);
-        //   }
-        // },
-
-        //Create Allowance(- Link Allowances to Regimes - )
-        // async createAllowance() {
-        //   // console.log("HERE");
-        //   // console.log("TEST HERE", this.allowanceCode, this.regimeCode);
-        //   if (this.allowance_name == "" || this.salary_regime == "") {
-        //     Swal.fire({
-        //       icon: "error",
-        //       title: "Oops...",
-        //       text: "Something went wrong!",
-        //       width: 400,
-        //     });
-        //   } else {
-        //     try {
-        //       const res = await axios({
-        //         headers: {
-        //           Authorization: `Bearer ${this.jwt}`,
-        //         },
-        //         method: "post",
-        //         url: `${this.baseURL}/allowance_regime`,
-        //         data: {
-        //           institution_code: this.instu_code,
-        //           regime_code: this.regimeCode,
-        //           allowance_code: this.allowanceCode,
-        //           entered_by: "Veripay Integrated",
-        //         },
-        //       });
-
-        //       // Check for Status Code
-        //       console.log(res);
-        //       if (res.data.response.code === "00") {
-        //         this.allowance_name = "";
-        //         this.salary_regime = "";
-        //         const data = res.data.response.message.data;
-        //         this.items.push({
-        //           allowance_name: data.allowance_name,
-        //           salreg: data.regime_name,
-        //           institu: data.institution,
-        //           enterby: data.entered_by,
-        //           enteron: data.date.split("T")[0],
-        //           status: data.active,
-        //           allow_code: data.allowance_code,
-        //           regime_code: data.regime_code,
-        //           allow_regime_code: data.allowance_regime_code,
-        //         });
-
-        //         this.dialog2 = false;
-
-        //         Swal.fire({
-        //           icon: "success",
-        //           title: "Created",
-        //           text: "Allowance Name Created",
-        //           width: 400,
-        //         });
-        //       } else if (res.data.response.code == "E202") {
-        //         Swal.fire({
-        //           icon: "info",
-        //           title: "Oops...",
-        //           text: "Allowance is already assigned to Salary regime",
-        //           width: 400,
-        //         });
-        //       } else if (res.data.response.code == "E203") {
-        //         Swal.fire({
-        //           icon: "info",
-        //           title: "Oops...",
-        //           text: "Allowance allocation not successfu",
-        //           width: 400,
-        //         });
-        //       } else {
-        //         Swal.fire({
-        //           icon: "error",
-        //           title: "Oops...",
-        //           text: "Allowance Not Created",
-        //           width: 400,
-        //         });
-        //       }
-        //     } catch (error) {
-        //       console.log(error);
-        //       Swal.fire({
-        //         icon: "error",
-        //         title: "Oops...",
-        //         text: "Allowance Not Created",
-        //         width: 400,
-        //       });
-        //     }
-        //   }
-        //   this.dialog = false;
-        // },
-        //Edit Allowance
-        // async editAllowance() {
-        //   // console.log(this.allowanceItem);
-        //   try {
-        //     const res = await axios({
-        //       headers: {
-        //         Authorization: `Bearer ${this.jwt}`,
-        //       },
-        //       method: "put",
-        //       url: `${this.baseURL}/allowance_regime`,
-
-        //       data: {
-        //         institution_code: this.instu_code,
-        //         entered_by: this.allowanceItem.enterby,
-        //         regime_code: this.allowanceItem.regime_code,
-        //         allowance_regime_code: this.allowanceItem.allow_regime_code,
-        //         allowance_name: this.allowance_edit,
-        //         allowance_code: this.allowanceItem.allow_code,
-        //       },
-        //     });
-
-        //     if (res.data.response.code == "00") {
-        //       const row = this.items.findIndex(
-        //         (el) => el.allow_code === this.allowanceItem.allow_code
-        //       );
-
-        //       this.items[row].allowance_name = this.allowance_edit;
-        //       this.items[row].salreg = this.salary_edit;
-
-        //       this.dialogEdit = false;
-        //       return Swal.fire({
-        //         icon: "success",
-        //         text: "Edited Successfully",
-        //         title: "Successful",
-        //         width: 400,
-        //       });
-        //     } else if (res.data.response.code == "E300") {
-        //       Swal.fire({
-        //         icon: "error",
-        //         text: "Allowance Name Already Exist",
-        //         title: "Oops..",
-        //         width: 400,
-        //       });
-        //     } else if (res.data.response.code == "E301") {
-        //       Swal.fire({
-        //         icon: "error",
-        //         text: "Allowance name didn’t update!",
-        //         title: "Oops..",
-        //         width: 400,
-        //       });
-        //     } else {
-        //       Swal.fire({
-        //         icon: "error",
-        //         text: "Error Occured while Editing Allowance Name",
-        //         title: "Oops..",
-        //         width: 400,
-        //       });
-        //     }
-        //     // console.log("Edit Allowance", res);
-        //   } catch (error) {
-        //     console.log(error);
-        //     Swal.fire({
-        //       icon: "error",
-        //       text: "Something went wrong",
-        //       title: "Oops!!",
-        //       width: 400,
-        //     });
-        //   }
-        // },
-
-        //Delete Allowance
-        // async deleteAllowance(item) {
-        //   try {
-        //     const res = await axios({
-        //       headers: {
-        //         Authorization: `Bearer ${this.jwt}`,
-        //       },
-        //       // - {‘institution_code’:’’, ‘allowance_code’:’’}
-        //       method: "delete",
-        //       url: `${this.baseURL}/allowance_regime`,
-        //       data: {
-        //         institution_code: this.instu_code,
-        //         allowance_regime_code: item.allow_regime_code,
-        //       },
-        //     });
-        //     // console.log(res);
-        //     if (res.data.response.code == "00") {
-        //       const row = this.items.findIndex(
-        //         (el) => el.allow_code === item.allow_code
-        //       );
-
-        //       this.items.splice(row, 1);
-
-        //       return Swal.fire({
-        //         icon: "success",
-        //         text: "Allowance deleted successfully!",
-        //         title: "Successful",
-        //         width: 400,
-        //       });
-        //     } else {
-        //       return Swal.fire({
-        //         icon: "error",
-        //         title: "Allowance not deleted successfully!",
-        //         width: 400,
-        //       });
-        //     }
-        //   } catch (error) {
-        //     console.log(error);
-        //     Swal.fire({
-        //       icon: "error",
-        //       text: "Something went wrong",
-        //       title: "Oops!!",
-        //     });
-        //   }
-        // },
     },
 };
 </script>

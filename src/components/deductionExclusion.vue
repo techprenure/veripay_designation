@@ -24,6 +24,7 @@
                       v-model="search"
                       append-icon="mdi-magnify"
                       label="Search"
+
                       single-line
                       hide-details
                       outlined
@@ -317,6 +318,7 @@ import Swal from "sweetalert2";
 import {
     mapGetters
 } from "vuex";
+import unitAllowanceVue from './unitAllowance.vue';
 //import designationVue from './designation.vue';
 
 export default {
@@ -476,7 +478,7 @@ export default {
                 //Check status
                 const message = res.data.response.message.message;
                 if (res.data.response.code == "00") {
-                    const row = this.items.findIndex(
+                    const row = this.items.findIndex( 
                         (el) => el.unit_allowance_code === item.unit_allowance_code
                     );
 
@@ -525,7 +527,7 @@ export default {
                         Authorization: `Bearer ${this.jwt}`,
                     },
                     // - {‘institution_code’:’’, ‘allowance_code’:’’}
-                    method: "delete",
+                    method: "delete",  
                     url: `${this.baseURL}/deduction`,
                     data: {
                         institution_code: this.instu_code,
@@ -561,7 +563,7 @@ export default {
                 console.log(error);
                 Swal.fire({
                     icon: "error",
-                    text: "Something went wrong",
+                    text: "Something went wrong", 
                     title: "Oops!!",
                 });
             }
@@ -578,6 +580,7 @@ export default {
             console.log('Result For deduction_exclusion', res);
             res.data.response.message.data.forEach((el) => {
                 //console.log("List unit Alllowance",el);
+            
                 this.items.push({
                     appliication_level: el.application_level_name,
                     approved: el.approved,

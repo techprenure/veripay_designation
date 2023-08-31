@@ -20,7 +20,7 @@ import MDA_Department from "../components/MDA_Department.vue";
 import deduction from "../components/deduction.vue";
 import manageDeduction from "../components/manageDeductions.vue";
 
-import Layout from "../views/Layout.vue";
+import Parent from "../views/Layout.vue";
 // import Home from '../views/Home.vue'
 
 Vue.use(VueRouter);
@@ -29,7 +29,7 @@ const routes = [
   {
     path: "/",
     name: "LandingPage",
-    component: Layout,
+    component: Parent,
     children: [
       {
         path: "/dashboard/setup/hr/designation",
@@ -114,7 +114,7 @@ const routes = [
       },
       {
         path: "/dashboard/setup/hr/mda/department",
-        name: "MDA",
+        name: "Department",
         component: MDA_Department,
       },
       // {
